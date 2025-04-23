@@ -19,7 +19,7 @@ public class BodyShop {
 
     public void mostrarAceleracao(BodyShop oficina) {
         int aceleracao = oficina.getVeloAerofolio() + oficina.getVeloBodyKit() + oficina.getVeloRodas() + oficina.getVelocapo();
-        System.out.println("Aceleração: " + aceleracao + "Kmh1");
+        System.out.println("Aceleração: " + aceleracao + "Kmh");
     }
 
     public void mostrarCarroceria(Carro carro) {
