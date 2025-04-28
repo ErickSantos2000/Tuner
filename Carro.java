@@ -31,7 +31,7 @@ public class Carro {
         capo = "Padrão de fabrica";
         ligado = false;
         aerodinamica = 0;
-
+        aceleracaoModificada = 0;
     }
 
     public void ligarCarro(){
@@ -173,5 +173,9 @@ public class Carro {
     //
     public int getAerodinamica(){
         return aerodinamica;
+    }
+
+    public void setOficina(BodyShop oficina) {
+        this.oficina = oficina;
     }
 }

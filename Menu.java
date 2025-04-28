@@ -129,7 +129,6 @@ public class Menu {
                             System.out.println("Velocidade máxima alcançada!");
                         }
                     }
-
                     break;
                 case 3:
                     carro.parar();
@@ -145,7 +144,9 @@ public class Menu {
                         System.out.println("Não pode sair do carro rapaz! Pare-o antes!");
                     } if(carro.getLigado() == true){
                     System.out.println("Não pode sair do carro rapaz! O c3arro está ligado!");
-                }
+                    } else {
+                    System.out.println("Saindo...");
+                    }
                     break;
 
                 default:
