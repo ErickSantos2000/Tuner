@@ -5,11 +5,11 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 
         Carro carro = new Carro("Nissan", "Skyline GTR R34", 2002, "Azul");
-        BodyShop oficina = new BodyShop();
-        ColorShop pintura = new ColorShop();
-        Menu menu = new Menu();
+        BodyShop oficina = new BodyShop(carro);
+        ColorShop pintura = new ColorShop(carro);
+        Menu menu = new Menu(carro, oficina, pintura);
 
-        menu.menuPrincipal(carro, oficina, pintura);
+        menu.menuPrincipal();
 
     }
 }

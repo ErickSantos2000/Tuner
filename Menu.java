@@ -1,10 +1,19 @@
 import java.util.Scanner;
 
 public class Menu {
+    private Carro carro;
+    private BodyShop oficina;
+    private ColorShop pintura;
+
     Scanner sc = new Scanner(System.in);
 
+    public Menu(Carro carro, BodyShop oficina, ColorShop pintura){
+        this.carro = carro;
+        this.oficina = oficina;
+        this.pintura = pintura;
+    }
 
-    public void menuColorShop(Carro carro, ColorShop pintura){
+    public void menuColorShop(){
         int corOpcao;
         do {
             System.out.println("\n-- COLORSHOP --");
@@ -28,7 +37,8 @@ public class Menu {
                         System.out.print("Escolha uma opção: ");
                         opCor = sc.nextInt();
 
-                        pintura.pintura(carro, opCor);
+                        pintura.pintura(opCor);
+                        System.out.println("Carro pintado de "+ carro.getCor());
 
                     }while (opCor != 0);
 
@@ -44,7 +54,8 @@ public class Menu {
                         System.out.print("Escolha uma opção: ");
                         corNeon = sc.nextInt();
 
-                        pintura.colocarNeon(carro, corNeon);
+                        pintura.colocarNeon(corNeon);
+                        System.out.println("Neon "+ carro.getNeon() + " instalado!");
 
                     }while (corNeon != 0);
 
@@ -60,7 +71,8 @@ public class Menu {
                         System.out.print("Escolha uma opção: ");
                         opcAdesivo = sc.nextInt();
 
-                        pintura.colocarAdesivo(carro, opcAdesivo);
+                        pintura.colocarAdesivo(opcAdesivo);
+                        System.out.println(carro.getAdesivo() + " aplicado!");
 
                     }while (opcAdesivo != 0);
 
@@ -103,7 +115,7 @@ public class Menu {
                     if(carro.getAceleracaoModificada() > 0){
 
                         if(360 > carro.getVelocidade()){
-                            carro.acelerar(20, oficina);
+                            carro.acelerar(20);
                         }
                         else {
                             System.out.println("Velocidade máxima alcançada!");
@@ -111,7 +123,7 @@ public class Menu {
                     }
                     else {
                         if(280 > carro.getVelocidade()){
-                            carro.acelerar(20, oficina);
+                            carro.acelerar(20);
                         }
                         else {
                             System.out.println("Velocidade máxima alcançada!");
@@ -143,7 +155,7 @@ public class Menu {
         } while (carroOpc != 0 || carro.getVelocidade() != 0 || carro.getLigado() == true);
 
     }
-    public void menuBodyShop(Carro carro, BodyShop oficina){
+    public void menuBodyShop(){
         int escolha;
         do {
             System.out.println("\n-- BODYSHOP --");
@@ -169,7 +181,8 @@ public class Menu {
                         System.out.print("Escolha uma opção: ");
                         opcBody = sc.nextInt();
 
-                        oficina.instalarBodyKit(carro, opcBody);
+                        oficina.instalarBodyKit(opcBody);
+                        System.out.println(carro.getBodyKit() + " instalado!");
 
                     }while (opcBody != 0);
 
@@ -185,7 +198,8 @@ public class Menu {
                         System.out.print("Escolha uma opção: ");
                         opcRodas = sc.nextInt();
 
-                        oficina.instalarRodas(carro, opcRodas);
+                        oficina.instalarRodas(opcRodas);
+                        System.out.println(carro.getRodas() + " instalado!");
 
                     }while (opcRodas != 0);
 
@@ -201,7 +215,8 @@ public class Menu {
                         System.out.print("Escolha uma opção: ");
                         opcCapo = sc.nextInt();
 
-                        oficina.instalarCapo(carro, opcCapo);
+                        oficina.instalarCapo(opcCapo);
+                        System.out.println(carro.getCapo() + " instalado!");
 
                     }while (opcCapo != 0);
 
@@ -217,7 +232,8 @@ public class Menu {
                         System.out.print("Escolha uma opção: ");
                         opcAerofolio = sc.nextInt();
 
-                        oficina.instalarAerofolio(carro, opcAerofolio);
+                        oficina.instalarAerofolio(opcAerofolio);
+                        System.out.println(carro.getAeroFolio() + " instalado!");
 
                     }while (opcAerofolio != 0);
 
@@ -234,7 +250,7 @@ public class Menu {
 
     }
 
-    public void menuPrincipal(Carro carro, BodyShop oficina, ColorShop pintura){
+    public void menuPrincipal(){
 
         int opcao;
 
@@ -249,11 +265,11 @@ public class Menu {
 
             switch (opcao) {
                 case 1:
-                    menuBodyShop(carro, oficina);
+                    menuBodyShop();
                     break;
 
                 case 2:
-                    menuColorShop(carro, pintura);
+                    menuColorShop();
                     break;
 
                 case 3:

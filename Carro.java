@@ -17,6 +17,8 @@ public class Carro {
     private String neon;
     private String adesivo;
 
+    private BodyShop oficina;
+
     public Carro(String fabricante, String modelo, int ano, String cor){
         this.fabricante = fabricante;
         this.modelo = modelo;
@@ -29,6 +31,7 @@ public class Carro {
         capo = "Padrão de fabrica";
         ligado = false;
         aerodinamica = 0;
+
     }
 
     public void ligarCarro(){
@@ -53,7 +56,7 @@ public class Carro {
         }
     }
 
-    public void acelerar(int valor, BodyShop oficina){
+    public void acelerar(int valor){
         int vezes = 0;
         aceleracaoModificada = oficina.getVeloAerofolio() + oficina.getVeloBodyKit() + oficina.getVeloRodas() + oficina.getVelocapo();
 

@@ -1,19 +1,26 @@
 public class ColorShop {
-    public void pintura(Carro carro, int novaCor) {
+
+    private Carro carro;
+    private String cor;
+    private String neon;
+    private String adesivo;
+
+    public ColorShop(Carro carro){
+        this.carro = carro;
+    }
+
+    public void pintura(int novaCor) {
         switch (novaCor) {
             case 1:
                 carro.setCor("Prata");
-                System.out.println("Carro pintado de prata!");
                 break;
 
             case 2:
                 carro.setCor("Vermelho");
-                System.out.println("Carro pintado de vermelho!");
                 break;
 
             case 3:
                 carro.setCor("Preto");
-                System.out.println("Carro pintado de preto!");
                 break;
 
             case 0:
@@ -25,21 +32,18 @@ public class ColorShop {
         }
     }
 
-    public void colocarNeon(Carro carro, int neon) {
+    public void colocarNeon( int neon) {
         switch (neon) {
             case 1:
                 carro.setNeon("Azul");
-                System.out.println("Neon azul instalado!");
                 break;
 
             case 2:
                 carro.setNeon("Vermelho");
-                System.out.println("Neon vermelho instalado!");
                 break;
 
             case 3:
                 carro.setNeon("Branco");
-                System.out.println("Neon branco instalado!");
                 break;
 
             case 0:
@@ -51,19 +55,16 @@ public class ColorShop {
         }
     }
 
-    public void colocarAdesivo(Carro carro, int tipo) {
+    public void colocarAdesivo(int tipo) {
         switch (tipo) {
             case 1:
                 carro.setAdesivo("Faixa Esportiva");
-                System.out.println("Adesivo 'Faixa Esportiva' aplicado!");
                 break;
             case 2:
                 carro.setAdesivo("Chamas");
-                System.out.println("Adesivo 'Chamas' aplicado!");
                 break;
             case 3:
                 carro.setAdesivo("Logo Personalizado");
-                System.out.println("Adesivo 'Logo Personalizado' aplicado!");
                 break;
 
             case 0:
